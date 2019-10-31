@@ -1,0 +1,3 @@
+bool example() {
+  return true;
+}

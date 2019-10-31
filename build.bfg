@@ -1,0 +1,17 @@
+from os.path import splitext
+
+# Code
+code = find_files('src', '*.cpp')
+includes = ['src']
+
+# Tests
+mettle = test_driver(['mettle', '--output=verbose'])
+libmettle = package('mettle')
+
+for src in find_files('test', '*.test.cpp', extra='*.hpp'):
+    test(executable(
+        splitext(src)[0],
+        files=[src] + code,
+        includes=includes,
+        packages=[libmettle]
+    ), driver=mettle)
