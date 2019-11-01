@@ -66,5 +66,14 @@ suite<> sportsball("sportsball", [](auto &_) {
 
       expect(sb.getScore(), equal_to(std::string{"Home: 0 Away: 1"}));
     });
+    _.test("scores even frames for home team", []() {
+      Sportsball sb{};
+      sb.addEntry(0);
+      sb.addEntry(0);
+      sb.addEntry(0);
+      sb.addEntry(4);
+
+      expect(sb.getScore(), equal_to(std::string{"Home: 1 Away: 0"}));
+    });
   });
  });
