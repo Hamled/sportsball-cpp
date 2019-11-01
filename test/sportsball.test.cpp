@@ -13,6 +13,11 @@ suite<> sportsball("sportsball", [](auto &_) {
         std::is_member_function_pointer<decltype(&Sportsball::getScore)>::value,
         equal_to(true));
   });
+  _.test("has an addEntry method", []() {
+    expect(
+        std::is_member_function_pointer<decltype(&Sportsball::addEntry)>::value,
+        equal_to(true));
+  });
   _.subsuite("getScore", [](auto &_) {
     _.test("scores 0 points for no runners", []() {
       Sportsball sb{};
