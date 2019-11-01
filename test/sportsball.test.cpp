@@ -47,5 +47,15 @@ suite<> sportsball("sportsball", [](auto &_) {
 
       expect(sb.getScore(), equal_to(std::string{"Home: 0 Away: 3"}));
     });
+    _.test("scores points for 2+ runners before double", []() {
+      Sportsball sb{};
+      sb.addEntry(3);
+      sb.addEntry(2);
+      sb.addEntry(1);
+      sb.addEntry(2);
+      sb.addEntry(1);
+
+      expect(sb.getScore(), equal_to(std::string{"Home: 0 Away: 2"}));
+    });
   });
  });
