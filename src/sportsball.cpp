@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <string>
 #include <boost/format.hpp>
 #include "sportsball.hpp"
@@ -8,6 +9,5 @@ std::string Sportsball::getScore() {
 
 void Sportsball::addEntry(int entry) {
   ++this->runners;
-  ++this->unscored;
-  if(entry >= BASES) this->unscored = BASES - entry + 1;
+  this->unscored = std::min(BASES - entry, this->unscored) + 1;
 }
