@@ -9,5 +9,5 @@ std::string Sportsball::getScore() {
 void Sportsball::addEntry(int entry) {
   ++this->runners;
   ++this->unscored;
-  if(entry == 4) this->unscored = 0;
+  if(entry >= BASES) this->unscored = BASES - entry + 1;
 }
