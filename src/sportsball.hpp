@@ -3,5 +3,8 @@
 class Sportsball {
 public:
   std::string getScore();
-  void addEntry();
+  void addEntry(int entry);
+private:
+  int runners;
+  int unscored;
 };
