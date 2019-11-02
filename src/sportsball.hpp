@@ -3,4 +3,5 @@
 class Sportsball {
 public:
   std::string getScore() const;
+  void addEntry();
 };
