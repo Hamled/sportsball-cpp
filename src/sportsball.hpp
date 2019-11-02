@@ -1,4 +1,6 @@
+#include <string>
+
 class Sportsball {
 public:
-  void getScore() const;
+  std::string getScore() const;
 };
