@@ -43,5 +43,11 @@ suite<> sportsball("Sportsball", [](auto &_) {
 
       expect(sb.getScore(), equal_to("Home: 0 Away: 1"));
     });
+    _.test("scores even frames for home team", []() {
+      Sportsball sb;
+      for(auto e : {0,0,0,4}) sb.addEntry(e);
+
+      expect(sb.getScore(), equal_to("Home: 1 Away: 0"));
+    });
   });
 });
