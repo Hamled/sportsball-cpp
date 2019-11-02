@@ -2,6 +2,7 @@
 
 class Sportsball {
 private:
+  static const int BASES = 3;
   int runners = 0;
   int unscored = 0;
 
