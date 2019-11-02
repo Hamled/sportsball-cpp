@@ -1,1 +1,4 @@
-class Sportsball {};
+class Sportsball {
+public:
+  void getScore() const;
+};
