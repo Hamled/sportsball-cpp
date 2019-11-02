@@ -37,5 +37,11 @@ suite<> sportsball("Sportsball", [](auto &_) {
 
       expect(sb.getScore(), equal_to("Home: 0 Away: 2"));
     });
+    _.test("scores points for 3+ runners before single", []() {
+      Sportsball sb;
+      for(auto e: {3,2,1,1}) sb.addEntry(e);
+
+      expect(sb.getScore(), equal_to("Home: 0 Away: 1"));
+    });
   });
 });
